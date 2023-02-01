@@ -5,22 +5,16 @@
 */
 
 
-void fillArrayWithRandomNumbers(int size, int min, int max, out int[] resultArray){
+void fillArrayWithRandomNumbers(int min, int max, int[] resultArray){
     
-    resultArray = default;
-    
-    int[] result = new int[size];
-
+   
     Random rnd = new Random();
-    int [] myArray = new int[size];
-    
-
-    for (int i = 0; i < size; i++)
+   
+    for (int i = 0; i < resultArray.Length; i++)
     {
-        result[i] = rnd.Next(min, max);
+        resultArray[i] = rnd.Next(min, max);
     }
 
-    resultArray = result;
 }
 
 
@@ -28,9 +22,9 @@ const int arraySize = 8;
 const int minRandomNumber = 0;
 const int maxRandomNumber = 100;
 
-int[] resultArray;
+int[] resultArray = new int[arraySize];
 
-fillArrayWithRandomNumbers(arraySize, minRandomNumber, maxRandomNumber, out resultArray);
+fillArrayWithRandomNumbers( minRandomNumber, maxRandomNumber, resultArray);
 
 Console.Write("[");
 for (int i = 0; i < arraySize; i++)
