@@ -5,22 +5,28 @@
 */
 
 Console.Clear();
-int numberBase;
-int numberExponent;
-int result = 1;
+int bs;
+int exp;
 
+
+int myPowFunct( int baseNumber, int exponentNumber){
+    int result = 1;
+
+    for (int i = 0; i < exponentNumber; i++)
+        {
+            result = result * baseNumber;
+        }
+    return result;
+}
 
 Console.Write($"Введите основание (целое число): ");
-if ( int.TryParse(Console.ReadLine(), out numberBase) )
+if ( int.TryParse(Console.ReadLine(), out bs) )
 {
     Console.Write($"Введите показатель степени (целое число): ");
-    if ( int.TryParse(Console.ReadLine(), out numberExponent) )
+    if ( int.TryParse(Console.ReadLine(), out exp) )
     {
-        for (int i = 0; i < numberExponent; i++)
-        {
-            result = result * numberBase;
-        }
-        Console.WriteLine($"{numberBase} в степени {numberExponent} = {result}" );
+        
+        Console.WriteLine($"{bs} в степени {exp} = {myPowFunct(bs, exp)}" );
               
     }
     else
